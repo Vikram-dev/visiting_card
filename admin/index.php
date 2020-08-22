@@ -28,7 +28,7 @@ $mysqli->close();
     	<div class="Wrapper">
     		<div class="Logo"><?php if(!empty($error)){echo $error; $error="";}?></div>
     		<div class="form">
-    			<form class="login_form" action="<?= $_PHPSELF ?>" method="post">
+    			<form class="login_form" action="index.php" method="post">
 	    			<div class="fieldset">
 	    				<input type="text" name="username" required="true">
 	    				<input type="password" name="pass" required="true">

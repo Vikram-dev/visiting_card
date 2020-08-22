@@ -1,4 +1,7 @@
 create table admin_user ( id INT(6) AUTO_INCREMENT PRIMARY KEY, username varchar(20), password TEXT);
+INSERT INTO `admin_user` (`id`, `username`, `password`) VALUES
+(1, 'Ratan', 'e25a25501ed80b77f1c1ca05b2f86c1c');
+
 
 create table userData(
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
@@ -20,3 +23,4 @@ create table userData(
 	phone_pay varchar(255),
 	amazon_pay varchar(255)
 );
+INSERT INTO `userdata` (`id`, `user_id`, `firm_name`, `firm_address`, `owner_name`, `phone1`, `alternate_contact`, `email`, `website`, `whatsapp`, `twitter`, `instagram`, `photo`, `logo`, `paytm`, `payu`, `phone_pay`, `amazon_pay`) VALUES (NULL, '1', 'Aggarwal General Agencies', 'Near Goyal Puri, Lowar Bazar, Modinagar (GHZB) - 201204', 'Ratan Lal Aggarwal', '8439401498', '7895759798', 'aga.ratan@gmail.com', 'https://www.bigbasket.com', '8439401498', '@aga.ratam', NULL, 'testrinomials.png', NULL, '8439401498', '8439401498', '8439401498', '8439401498');

@@ -3,9 +3,34 @@ session_start();
 //echo md5("ratan@123$"); die;
 require_once("config_db.php");
 if($_POST['submit_k']){
-	
+	if(empty($_POST['param'])){
+		$user_id = $_POST['param'];
+		$firm = $_POST['firm_name'];
+		$firm_add = $_POST['firm_address'];
+		$owner = $_POST['owner_name'];
+		$phone1 = $_POST['phone1'];
+		
+	$query = "Insert into userdata (`id`, `user_id`, `firm_name`, `firm_address`, `owner_name`, `phone1`, `alternate_contact`, `email`, `website`, `whatsapp`, `twitter`, `instagram`, `photo`, `logo`, `paytm`, `payu`, `phone_pay`, `amazon_pay`)"
+	."VALUES(NULL, '".$user_id."', '".$firm."', '".$firm_address."', '".$owner."', '".$phone1."', '7895759798', 'aga.ratan@gmail.com', 'https://www.bigbasket.com', '8439401498', '@aga.ratam', NULL, 'testrinomials.png', NULL, '8439401498', '8439401498', '8439401498', '8439401498')";
+	$sql=$mysqli->query($query);
+		if($sql){
+			
+		}
+	}else{
+		$query = "update userdata set "
+		."where username='".$_SESSION['username']."'";
+		$sql=$mysqli->query($query);
+	}
 }
-
+if(!empty($_SESSION['username'])){
+	$query = "Select * from userdata where username='".$_SESSION['username']."' limit 0,1";
+	$sql=$mysqli->query($query);
+	if($sql){
+		
+	}else{
+		$user_id = "";
+	}
+}
 ?>
 
 <html>
@@ -13,74 +38,12 @@ if($_POST['submit_k']){
     <title>
         Visting Card
     </title>
-    <style>
-        .wrapper{
-            width: 600px;
-            position: absolute;
-            right: 50%;
-            border: solid grey 2px;
-            border-radius: 5px;
-            border-shadow: 10px 10px;
-            border-spacing: 2px;
-            box-shadow: 11px 13px 16px darkgrey;
-        }
-        .top_wrapper{
-            height: 30px;
-            padding: 5px;
-        }
-        .top_wrapper a{
-            color: white;
-            text-decoration-color: white;
-            padding: 5px 30px;
-        }
-        .body_wrapper{
-            width: 100%;
-            display: block;
-        }
-        .body_wrapper .Logo{
-            width: 20%;
-            float: left;
-        }
-        .body_center{
-            width: 50%;
-            text-align: center;
-            float: left;
-            text-shadow: 2px 2px 4px yellow;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-        .body_wrapper .contact{
-             width: 25%;
-             float: right;
-             padding-top: 5px;
-             text-shadow: 2px 2px 4px yellow;
-         }
-        .footer_wrapper{
-            clear: both;
-            margin: 10px;
-            padding-top: 10px;
-        }
-        .footer_wrapper .firm_address{
-            margin-bottom: 5px;
-            padding-top: 10px;
-        }
-        .footer_wrapper .website{
-            margin-bottom: 5px;
-            text-align: center;
-        }
-        .social_contact{
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-        .social_contact a{
-            padding: 5px;
-            margin:5px;
-        }
-    </style>
+    <link src="../css/sample1.css" type="media"></link>
 </head>
 <body>
 
 <form action="edit.php" method="post">
+	<input type="hidden" value="<?=$user_id?>" name="param"/>
 	<label>Firm name</label>
 	<input type="text" name="firm_name"/>
 	<label>Firm Address</label>
