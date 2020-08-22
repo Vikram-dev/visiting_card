@@ -1,0 +1,22 @@
+create table admin_user ( id INT(6) AUTO_INCREMENT PRIMARY KEY, username varchar(20), password TEXT);
+
+create table userData(
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	user_id INT(6),
+	firm_name varchar(255),
+	firm_address TEXT,
+	owner_name varchar(20),
+	phone1 varchar(255),
+	alternate_contact varchar(255),
+	email varchar(255),
+	website varchar(255),
+	whatsapp varchar(255),
+	twitter varchar(255),
+	instagram varchar(255),
+	photo varchar(255),
+	logo varchar(255),
+	paytm varchar(255),
+	payu varchar(255),
+	phone_pay varchar(255),
+	amazon_pay varchar(255)
+);

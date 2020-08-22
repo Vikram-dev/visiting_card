@@ -1,0 +1,28 @@
+Sharing Option
+1. Share with Whatsapp
+2. Share with Facebook
+3. Share with instagram
+
+Features
+1. Location of business
+2. Driving location
+3. Whatsapp
+4. Instagram
+5. FB chat
+6. Website
+7. QR code
+8. Payment link
+
+Fields
+Name of firm
+Address of firm
+Logo
+background colour
+phone
+email
+whatsapp no
+Website
+Email
+twitter handle
+instagram handle
+Like / follow at FB
